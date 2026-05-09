@@ -1,3 +1,70 @@
+# SDXL CollageNet — img2img + party mode (Nathan's fork)
+
+A personal fork of [Joel Simon's CollageNet](https://github.com/joel-simon/CollageNet) adding an interactive img2img workflow on top of Joel's diffusion-time region projection. The original README is preserved verbatim below the divider.
+
+## What's new in this fork
+
+- **Gradio web UI** (`app.py`) — drag-and-drop input image, live sliders, three render modes (Render / Sweep / Party), no Jupyter required.
+- **Img2img + projection** — uses an input image to guide SDXL through `StableDiffusionXLImg2ImgPipeline`, then layers Joel's region projection on top during denoising.
+- **Party mode 🎉** — generates batches of random parameter combinations to surface unexpected aesthetics. Each render is logged to a CSV so you can recreate any specific output.
+- **`random_square` region method** — quadtree subdivision into mixed-size squares; less regular than the existing `square` method.
+- **Standalone experiment notebook** (`img2img_experiment.ipynb`) — Jupyter sandbox version of the same flow, useful for poking at internals.
+
+## Gallery
+
+### "A game of tetris" + wood patch bank + Bryce Canyon poster
+
+![Tetris/Bryce result](./assets/fork/example-tetris-bryce.png)
+
+*Wood source images used for the patch bank:*
+
+![Wood dataset](./assets/fork/example-tetris-bryce-bank.jpeg)
+
+### "A portrait" + 4 texture images + selfie
+
+![Portrait result](./assets/fork/example-portrait-textures.png)
+
+*Texture source images used for the patch bank:*
+
+![Textures dataset](./assets/fork/example-portrait-textures-bank.jpeg)
+
+### Mona Lisa test
+
+![Mona Lisa](./assets/fork/example-mona-lisa.png)
+
+## Interface
+
+*Experiment notebook (`img2img_experiment.ipynb`):*
+
+![Notebook UI](./assets/fork/screenshot-notebook.png)
+
+*Gradio app (`app.py`):*
+
+![Gradio app](./assets/fork/screenshot-gradio.png)
+
+## Running the new pieces
+
+After completing the setup in the original README below, install Gradio and launch:
+
+```bash
+pip install gradio
+python app.py
+```
+
+Opens at http://localhost:7860. Set the source images folder path at the top, drag in an input image, dial the sliders, and click Render. Sweep and Party tabs run batches of variations.
+
+Or use the standalone notebook for the same flow in a Jupyter cell:
+
+```bash
+jupyter lab img2img_experiment.ipynb
+```
+
+The original `main.ipynb` and `render.py` from upstream still work as before.
+
+---
+
+<!-- Below this line is Joel Simon's original README, preserved verbatim. -->
+
 # SDXL CollageNet
 
 Diffusion-time region-based collage rendering for SDXL.
