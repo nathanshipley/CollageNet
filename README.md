@@ -12,14 +12,6 @@ A personal fork of [Joel Simon's CollageNet](https://github.com/joel-simon/Colla
 
 ## Gallery
 
-### "A game of tetris" + wood patch bank + Bryce Canyon poster
-
-![Tetris/Bryce result](./assets/fork/example-tetris-bryce.png)
-
-*Wood source images used for the patch bank:*
-
-![Wood dataset](./assets/fork/example-tetris-bryce-bank.jpeg)
-
 ### "A portrait" + 4 texture images + selfie
 
 ![Portrait result](./assets/fork/example-portrait-textures.png)
@@ -27,6 +19,14 @@ A personal fork of [Joel Simon's CollageNet](https://github.com/joel-simon/Colla
 *Texture source images used for the patch bank:*
 
 ![Textures dataset](./assets/fork/example-portrait-textures-bank.jpeg)
+
+### "A game of tetris" + wood patch bank + Bryce Canyon poster
+
+![Tetris/Bryce result](./assets/fork/example-tetris-bryce.png)
+
+*Wood source images used for the patch bank:*
+
+![Wood dataset](./assets/fork/example-tetris-bryce-bank.jpeg)
 
 ### Mona Lisa test
 
